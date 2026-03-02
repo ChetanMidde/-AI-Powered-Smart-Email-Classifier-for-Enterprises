@@ -87,18 +87,18 @@ Applied the following cleaning steps to all emails:
 
 ```
 Infosys/
-â”œâ”€â”€ data_hub/
-â”‚   â”œâ”€â”€ Classification_Dataset/
-â”‚   â”‚   â”œâ”€â”€ Raw_Dataset/              # Original data files
-â”‚   â”‚   â”œâ”€â”€ Cleaning code/            # Cleaning scripts
-â”‚   â”‚   â””â”€â”€ cleaned_Dataset/          # merged_cleaned_dataset.csv
-â”‚   â”‚
-â”‚   â””â”€â”€ Urgency_Dataset/
-â”‚       â”œâ”€â”€ Raw_Dataset/              # train.csv, test.csv, validation.csv
-â”‚       â”œâ”€â”€ Cleaned_Dataset/          # Cleaned versions
-â”‚       â””â”€â”€ data_cleaning.py          # Cleaning script
-â”‚
-â””â”€â”€ README.md
+|-- data_hub/
+|   |-- Classification_Dataset/
+|   |   |-- Raw_Dataset/              # Original data files
+|   |   |-- Cleaning code/            # Cleaning scripts
+|   |   `-- cleaned_Dataset/          # merged_cleaned_dataset.csv
+|   |
+|   `-- Urgency_Dataset/
+|       |-- Raw_Dataset/              # train.csv, test.csv, validation.csv
+|       |-- Cleaned_Dataset/          # Cleaned versions
+|       `-- data_cleaning.py          # Cleaning script
+|
+`-- README.md
 ```
 
 ---
@@ -126,10 +126,10 @@ python data_cleaning.py
 
 ## Results (Milestone 1)
 
-âœ… **Classification Dataset**: 3,315 cleaned emails across 5 categories  
-âœ… **Urgency Dataset**: 2,810+ cleaned emails with 4 urgency levels  
-âœ… **Data Quality**: No duplicates, no missing values, all text normalized  
-âœ… **Code**: Modular cleaning scripts for reproducibility
+- **Classification Dataset**: 3,315 cleaned emails across 5 categories  
+- **Urgency Dataset**: 2,810+ cleaned emails with 4 urgency levels  
+- **Data Quality**: No duplicates, no missing values, all text normalized  
+- **Code**: Modular cleaning scripts for reproducibility
 
 ---
 
@@ -236,9 +236,9 @@ Developed a "Confidence-Aware" Hybrid System:
 
 ### 3. Verification
 Validated specific test cases:
-- "System is down" -> **High** (Rule Override) âœ…
-- "Newsletter subscription" -> **Low** (ML Prediction) âœ…
-- "Help with issue" -> **Medium** (Rule Fallback) âœ…
+- "System is down" -> **High** (Rule Override) [Verified]
+- "Newsletter subscription" -> **Low** (ML Prediction) [Verified]
+- "Help with issue" -> **Medium** (Rule Fallback) [Verified]
 
 ## Files Created (Milestone 3)
 - `train_urgency_model.py`: Script to fine-tune DistilBERT for urgency.
@@ -320,46 +320,46 @@ npm run dev
 
 ## Status
 
-**Milestone 1**: âœ… Complete
-**Milestone 2**: âœ… Complete
-**Milestone 3**: âœ… Complete
-**Milestone 4**: âœ… Complete
+**Milestone 1**: Complete
+**Milestone 2**: Complete
+**Milestone 3**: Complete
+**Milestone 4**: Complete
 
-## ðŸŒŸ Extra Features Implemented
+## Extra Features Implemented
 
 Beyond the core requirements, I implemented several advanced features to enhance usability, explainability, and enterprise readiness.
 
-### 1. ðŸŒ“ Dark / Light Mode System
+### 1. Dark / Light Mode System
 - **What**: A fully persistent theme toggle (Sun/Moon icon).
 - **Why**: Reduces eye strain for operators working night shifts and provides a modern, premium user experience.
 - **Tech**: React Context API, LocalStorage persistence, Material-UI theming.
 
-### 2. ðŸ§  XAI (Explainable AI) Wrapper
+### 2. XAI (Explainable AI) Wrapper
 - **What**: Added an "Explainability" layer to model predictions with an interactive heatmap.
 - **Why**: Enterprise users need to know *why* an email was marked "High Urgency".
 - **Tech**: Integrated urgency-aware keyword highlighting (Red=High, Orange=Medium) and confidence score visualization to build trust in AI decisions. Highlights are statically rendered for clarity.
 
-### 3. ðŸ›¡ï¸ Hybrid Safety Net
+### 3. Hybrid Safety Net
 - **What**: A failsafe system that overrides ML predictions for critical keywords (e.g., "system down").
 - **Why**: Ensures 100% recall on critical incidents where ML might statistically faulter.
 - **Tech**: Regex-based 'Critical' and 'Medium' rule sets in `urgency_rules_engine.py`.
 
-### 4. ðŸ“Š Advanced Analytics Dashboard
+### 4. Advanced Analytics Dashboard
 - **What**: A dedicated "Analytics" tab with a Split-View layout.
 - **Why**: Managers need high-level insights (e.g., "How many complaints today?").
 - **Tech**: Recharts library for data visualization, responsive Grid/Flexbox layouts.
 
-### 5. âš¡ Toast Notification System
+### 5. Toast Notification System
 - **What**: Non-intrusive popup alerts for actions (e.g., "Analysis Complete", "Copied to Clipboard").
 - **Why**: Improves user feedback loops without blocking the UI.
 - **Tech**: Custom React "Toast" component.
 
-### 6. ðŸ“„ PDF Report Generation
+### 6. PDF Report Generation
 - **What**: One-click export of History tables and Analytics insights into professional PDF documents.
 - **Why**: Facilitates offline reporting and archiving of email analysis data for upper management.
 - **Tech**: `jspdf` and `jspdf-autotable` client-side generation.
 
-### 7. â˜ï¸ Cloud-Native Split Architecture
+### 7. Cloud-Native Split Architecture
 - **What**: A decoupled deployment strategy hosting the Backend on **Hugging Face Spaces** (Docker) and Frontend on **Render** (Static Site).
 - **Why**: Maximizes performance and resources by using specialized platforms for each layer (High RAM for ML, Global CDN for UI) while remaining 100% free.
 - **Tech**: Docker API-only builds, Environment Variable configuration (`VITE_API_URL`), CORS policy management.
