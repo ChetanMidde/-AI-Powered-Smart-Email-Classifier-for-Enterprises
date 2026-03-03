@@ -2,7 +2,7 @@
 
 Live Link: https://enterprises-email-classifier.onrender.com/
 
-Backend Space Link (Hugging Face): https://huggingface.co/spaces/ChetanMahanty/email-classifier-dashboard/tree/main
+Backend Space Link (Hugging Face): https://huggingface.co/spaces/Chetan/email-classifier-dashboard/tree/main
 
 > **Note**: The Hugging Face Space contains the backend and a simple UI. To properly experience the full application, please use the **Live Link** above.
 
